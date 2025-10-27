@@ -6,11 +6,6 @@
 terraform.tfvars
 *.tfvars
 
-# Lambda
-lambda/dist/
-lambda/*/node_modules/
-lambda/*/package-lock.json
-
 # General
 .DS_Store
 *.log
