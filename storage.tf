@@ -2,9 +2,9 @@
 resource "aws_s3_bucket" "tf_state" {
   bucket = "my-terraform-remote-state-mohamed" # must be globally unique
 
-#  lifecycle {
-#    prevent_destroy = true
-#  }
+  #  lifecycle {
+  #    prevent_destroy = true
+  #  }
 
   tags = {
     Name        = "Terraform Remote State"
@@ -43,9 +43,9 @@ resource "aws_s3_bucket_public_access_block" "tf_state" {
 
 # DynamoDB Table for State Locking
 resource "aws_dynamodb_table" "tf_lock" {
-  name           = "terraform-locks"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "LockID"
+  name         = "terraform-locks"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
 
   attribute {
     name = "LockID"
